@@ -13,64 +13,66 @@
 
     <ImageView
         android:id="@+id/detail_flag"
-        android:padding="8dp"
-        android:layout_alignParentTop="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:padding="8dp" />
 
     <TextView
         android:id="@+id/detail_name"
-        android:textSize="20sp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="20sp" />
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:gravity="center_horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
 
         <LinearLayout
-            android:orientation="vertical"
-            android:gravity="right"
-            android:paddingRight="8dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="vertical"
+            android:paddingRight="8dp">
+
             <TextView
                 android:id="@+id/detail_abbreviation_label"
-                android:text="abbreviation:"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="abbreviation:" />
 
             <TextView
                 android:id="@+id/detail_area_label"
-                android:text="area:"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="area:" />
 
             <TextView
                 android:id="@+id/detail_population_label"
-                android:text="population:"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="population:" />
 
             <TextView
                 android:id="@+id/detail_capital_label"
-                android:text="capital:"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="capital:" />
 
             <TextView
                 android:id="@+id/detail_mostPopulousCity_label"
-                android:text="most populous city:"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="most populous city:" />
         </LinearLayout>
+
         <LinearLayout
-            android:orientation="vertical"
-            android:gravity="left"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/detail_abbreviation"
@@ -97,6 +99,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
-
     </LinearLayout>
+
+    <View
+        android:background="#e0e0e0"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        />
+    <CheckBox
+        android:text=" been there "
+        android:textSize="20dp"
+        android:id="@+id/been_there"
+        android:onClick="beenThere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </LinearLayout>

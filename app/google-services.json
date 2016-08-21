@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "643194952826",
+    "firebase_url": "https://ivebeeneverywhere-e0918.firebaseio.com",
+    "project_id": "ivebeeneverywhere-e0918",
+    "storage_bucket": "ivebeeneverywhere-e0918.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643194952826:android:6c501a9bcb318e98",
+        "android_client_info": {
+          "package_name": "com.bryonnicoson.ivebeeneverywhere"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "643194952826-dq87p7i8bff5s8u0qro5oe01smdquk52.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bryonnicoson.ivebeeneverywhere",
+            "certificate_hash": "045BD7D91DA73DAF8BABC5C99C4501AB2709E95B"
+          }
+        },
+        {
+          "client_id": "643194952826-7nuob7n2vqe6h75hor9pcbuk2q334pnd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTiMof_AdhGVrAqmTkvTipJkhOrCfrM-o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643194952826-7nuob7n2vqe6h75hor9pcbuk2q334pnd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

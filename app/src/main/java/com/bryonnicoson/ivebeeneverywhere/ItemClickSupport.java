@@ -7,7 +7,7 @@ import android.view.View;
  * Hugo Visser (Android GDE) provides this license-free class at...
  * http://www.littlerobots.nl/blog/Handle-Android-RecyclerView-Clicks/
  *
- * TODO: find a native firebaseui recyclerview way to handle this
+ * TODO: find a native firebaseui recyclerview way to handle this?
  */
 
 public class ItemClickSupport {

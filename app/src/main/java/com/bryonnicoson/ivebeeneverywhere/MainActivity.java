@@ -18,7 +18,7 @@ import com.squareup.picasso.Picasso;
 
 public class MainActivity extends AppCompatActivity {
 
-    // FIXME: 8/21/16 - Picasso.placeholder(drawable) starts centered in RecyclerView
+    // FIXME: 8/21/16 - Picasso.placeholder(drawable) starts centered in RecyclerView - XML view load order?
     // TODO: add dividers between items in RecyclerView ?
     // TODO: QUESTION: would it be better to create a local array of State objects - don't need it
     // TODO: QUESTION: in current backend-heavy/network-heavy (but persistent) method,
@@ -26,7 +26,8 @@ public class MainActivity extends AppCompatActivity {
     // TODO: QUESTION: should I have just done this with SQLite like I've done before?
     // TODO: QUESTION: how to merge firebase tables
     // TODO: QUESTION: does offline persistence precede network call
-    // TODO: QUESTION:
+    // TODO: NEXT STEPS: add firebase auth, user table, been-there table per each user,  (LEARN)
+    // TODO: NEXT STEPS: add date picker and recyclerview checkbox/dates - connect to db
 
     // TODO: keep learning :)
 

@@ -3,6 +3,7 @@ package com.bryonnicoson.ivebeeneverywhere;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -19,17 +20,6 @@ import com.squareup.picasso.Picasso;
 public class MainActivity extends AppCompatActivity {
 
     // FIXME: 8/21/16 - Picasso.placeholder(drawable) starts centered in RecyclerView - XML view load order?
-    // TODO: add dividers between items in RecyclerView ?
-    // TODO: QUESTION: would it be better to create a local array of State objects - don't need it
-    // TODO: QUESTION: in current backend-heavy/network-heavy (but persistent) method,
-    // TODO:           would using a separate FirebaseHandler class be preferable
-    // TODO: QUESTION: should I have just done this with SQLite like I've done before?
-    // TODO: QUESTION: how to merge firebase tables
-    // TODO: QUESTION: does offline persistence precede network call
-    // TODO: NEXT STEPS: add firebase auth, user table, been-there table per each user,  (LEARN)
-    // TODO: NEXT STEPS: add date picker and recyclerview checkbox/dates - connect to db
-
-    // TODO: keep learning :)
 
     public static class StateHolder extends RecyclerView.ViewHolder {
 
@@ -38,16 +28,17 @@ public class MainActivity extends AppCompatActivity {
 
         public StateHolder(View itemView){
             super(itemView);
-            flag = (ImageView)itemView.findViewById(R.id.flag);
-            name = (TextView)itemView.findViewById(R.id.name);
+            flag = (ImageView)itemView.findViewById(R.id.state_flag);
+            name = (TextView)itemView.findViewById(R.id.state_name);
         }
     }
 
     public static final String STATES = "states";
     private RecyclerView mStateRecyclerView;
     private LinearLayoutManager mLinearLayoutManager;
+    private GridLayoutManager mGridLayoutMangager;
     private DatabaseReference mFirebaseDatabaseReference;
-    private FirebaseRecyclerAdapter<State, StateHolder> mFireBaseAdapter;  // AWESOME !
+    private FirebaseRecyclerAdapter<State, StateHolder> mFireBaseAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,14 +47,16 @@ public class MainActivity extends AppCompatActivity {
 
         // view init
         mStateRecyclerView = (RecyclerView)findViewById(R.id.state_recyclerview);
-        mLinearLayoutManager = new LinearLayoutManager(this);
+        //GV mLinearLayoutManager = new LinearLayoutManager(this);
+        mGridLayoutMangager = new GridLayoutManager(this, 4, GridLayoutManager.HORIZONTAL, false);
         //mLinearLayoutManager.setStackFromEnd(true);
 
         // db init
         mFirebaseDatabaseReference = FirebaseDatabase.getInstance().getReference();
         mFireBaseAdapter = new FirebaseRecyclerAdapter<State, StateHolder>(
                 State.class,                                    // model
-                R.layout.state_item,                            // layout
+                //GV R.layout.state_item,                            // layout
+                R.layout.state_card,
                 StateHolder.class,                              // viewholder
                 mFirebaseDatabaseReference.child(STATES)) {     // data
             @Override
@@ -83,7 +76,8 @@ public class MainActivity extends AppCompatActivity {
             public void onItemRangeInserted(int positionStart, int itemCount){
                 super.onItemRangeInserted(positionStart, itemCount);
                 int stateCount = mFireBaseAdapter.getItemCount();
-                int lastVisiblePosition = mLinearLayoutManager.findLastCompletelyVisibleItemPosition();
+                int lastVisiblePosition = mGridLayoutMangager.findLastCompletelyVisibleItemPosition();
+                //GV int lastVisiblePosition = mLinearLayoutManager.findLastCompletelyVisibleItemPosition();
                 if (lastVisiblePosition == -1 ||
                         (positionStart >= (stateCount -1) && lastVisiblePosition == (positionStart -1))){
                     mStateRecyclerView.scrollToPosition(positionStart);
@@ -91,7 +85,8 @@ public class MainActivity extends AppCompatActivity {
                 mStateRecyclerView.scrollToPosition(0);  // start at the top
             }
         });
-        mStateRecyclerView.setLayoutManager(mLinearLayoutManager);
+        //GV mStateRecyclerView.setLayoutManager(mLinearLayoutManager);
+        mStateRecyclerView.setLayoutManager(mGridLayoutMangager);
         mStateRecyclerView.setAdapter(mFireBaseAdapter);
 
         ItemClickSupport.addTo(mStateRecyclerView).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:state_card="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/state_card"
+    android:layout_width="140dp"
+    android:layout_height="140dp"
+    state_card:cardUseCompatPadding="true"
+    state_card:cardCornerRadius="8dp"
+    android:layout_marginBottom="16dp">
+
+    <RelativeLayout
+        android:padding="8dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/state_flag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/state_name"
+            android:layout_below="@id/state_flag"
+            android:textSize="13sp"
+            android:textColor="#000000"
+            android:background="#ffffff"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
